@@ -74,9 +74,9 @@ $_columns = [
         </div>
         <div class="pull-right"></div>
     </div>
-    <?php endif; ?>
-    <div class="list-table list-table ibox panel-dep-edit">
-        <div class="table-responsive">
+<?php endif; ?>
+<div class="list-table list-table ibox panel-dep-edit">
+    <div class="table-responsive">
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -85,8 +85,8 @@ $_columns = [
             'summary' => $_html,
             'emptyText' => $_empty_html,
         ]); ?>
-        </div>
     </div>
+</div>
 <?= $this->blocks['sectionTwo'] ?>
 
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $('.table-rowspan thead .filters td:last').remove();
     $('#main-menu-navigation .has-sub').removeClass('active');
+    $('section').find('.card-title').text($('title').text());
 });
 window.setTimeout(function () {
     $('.alert').alert('close');

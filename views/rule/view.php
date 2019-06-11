@@ -15,25 +15,27 @@ $this->renderFile('@jx/admin_chameleon/views/layouts/parts/section.php');
 
 ?>
 <?= $this->blocks['sectionOne'] ?>
-<?php if (Helper::checkRoute('update')): ?>
-    <?= Html::a(Yii::t('rbac-admin', 'Update'), ['update', 'id' => $model->name], ['class' => 'btn  btn-success']) ?>
-<?php endif; ?>
-&nbsp;
-<?php if (Helper::checkRoute('delete')) {
-    echo Html::a(Yii::t('rbac-admin', 'Delete'), ['delete', 'id' => $model->name], [
-        'class' => 'btn btn-danger',
-        'data-confirm' => Yii::t('rbac-admin', 'Are you sure to delete this item?'),
-        'data-method' => 'post',
-    ]);
-}
+<div class="list-table list-table ibox panel-dep-edit">
+    <?php if (Helper::checkRoute('update')): ?>
+        <?= Html::a(Yii::t('rbac-admin', 'Update'), ['update', 'id' => $model->name], ['class' => 'btn  btn-success']) ?>
+    <?php endif; ?>
+    &nbsp;
+    <?php if (Helper::checkRoute('delete')) {
+        echo Html::a(Yii::t('rbac-admin', 'Delete'), ['delete', 'id' => $model->name], [
+            'class' => 'btn btn-danger',
+            'data-confirm' => Yii::t('rbac-admin', 'Are you sure to delete this item?'),
+            'data-method' => 'post',
+        ]);
+    }
 
-echo DetailView::widget([
-    'model' => $model,
-    'options' => ['class' => "text-center kv-grid-table table table-bordered table-striped kv-table-wrap"],
-    'attributes' => [
-        'name',
-        'className',
-    ],
-]);
-?>
+    echo DetailView::widget([
+        'model' => $model,
+        'options' => ['class' => "text-center kv-grid-table table table-bordered table-striped kv-table-wrap"],
+        'attributes' => [
+            'name',
+            'className',
+        ],
+    ]);
+    ?>
+</div>
 <?= $this->blocks['sectionTwo'] ?>
