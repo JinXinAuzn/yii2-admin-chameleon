@@ -29,14 +29,18 @@ class MasterController extends BaseController
 	public function actions()
 	{
 		return [
-			'captcha' => [
-				'class' => CaptchaAction::className(),
-				'minLength' => 4,
-				'maxLength' => 4,
-				'backColor' => 0x00A17D,
-				'foreColor' => 0xFFFFFF,
-				'transparent' => FALSE,
-			],
+            'captcha' => [
+                'class' => CaptchaAction::className(),
+                'minLength' => 4,
+                'maxLength' => 4,
+                'padding' => 8,
+                'height' => 60,
+                'width' => 170,
+                'offset' => 20,
+                'backColor' => 0xD8D8D8,
+                'foreColor' => 0x666666,
+                'transparent' => FALSE,
+            ],
 		];
 	}
 

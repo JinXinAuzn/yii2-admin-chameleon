@@ -13,11 +13,9 @@ class LoginAsset extends AssetBundle
 {
 	public $sourcePath = '@jx/admin_chameleon/web';
 	public $css = [
-		'css/login/reset.css',
 		'css/login/login.css',
 	];
 	public $js=[
-		'js/login/FSS.js'
 	];
 	public $depends = [
 		'yii\web\YiiAsset',
