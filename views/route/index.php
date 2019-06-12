@@ -23,6 +23,7 @@ $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate
 <style>
     .input-group {
         min-height: 40px;
+        width: 100%;
     }
 </style>
 <?= $this->blocks['sectionOne'] ?>
