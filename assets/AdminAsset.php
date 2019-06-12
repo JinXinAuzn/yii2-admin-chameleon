@@ -9,8 +9,6 @@ class AdminAsset extends AssetBundle
     public $css = [
         'css/admin/google-font.css',
         'css/admin/vendors.min.css',
-        'css/admin/bootstrap.min.css',
-        'css/admin/bootstrap-extended.min.css',
         'css/admin/colors.min.css',
         'css/admin/components.min.css',
         'css/admin/vertical-menu-modern.css',

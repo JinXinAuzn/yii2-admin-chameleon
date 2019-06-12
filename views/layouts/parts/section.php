@@ -15,7 +15,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class='card-content collapse show'>
+                <div class='card-content collapse in'>
                     <div class='card-body card-dashboard'>
                         <?php $this->endBlock(); ?>
 
