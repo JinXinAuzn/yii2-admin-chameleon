@@ -6,10 +6,11 @@ use yii\helpers\Html;
     <div class="navbar-wrapper">
         <div class="navbar-container content">
             <div class="collapse navbar-collapse show" id="navbar-mobile">
-                <ul class="nav navbar-nav mr-auto float-left">
+                <ul class="nav navbar-nav float-left">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle" href="#"><i class="ft-menu font-large-1"> </i></a></li>
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
                 </ul>
+                <ul class="nav navbar-nav nav-item d-none d-md-block" style="margin: 0 auto;color: #fff;"><?=Yii::t('rbac-admin','Backend_name')?></ul>
                 <ul class="nav navbar-nav float-right" id="nav-admin">
                     <li class="dropdown dropdown-user nav-item">
                         <?=Html::a(isset(Yii::$app->user->identity->username) ? Yii::$app->user->identity->username : 'admin','#!',['class'=>'dropdown-toggle nav-link dropdown-user-link ','data-toggle'=>'dropdown'])?>
