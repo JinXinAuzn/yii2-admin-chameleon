@@ -19,7 +19,8 @@ $callback = function ($menu) {
         //visible
         isset($data['visible']) && $return['visible'] = $data['visible'];
         //icon
-        isset($data['icon']) && $data['icon'] && $return['icon'] = $data['icon'];
+//        isset($data['icon']) && $data['icon'] && $return['icon'] = $data['icon'];
+        isset($data['icons']) && $data['icons'] && $return['icons'] = $data['icons'];
         //other attribute e.g. class...
         $return['options'] = $data;
     }

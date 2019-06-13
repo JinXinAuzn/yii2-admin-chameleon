@@ -17,7 +17,7 @@ class Menu extends Menus
     /**
      * @inheritdoc
      */
-    public $linkTemplate = '<a href="{url}">{icon} {label}</a>';
+    public $linkTemplate = '<a href="{url}">{icons} {label}</a>';
     public $submenuTemplate = "\n<ul class='menu-content' {show}>\n{items}\n</ul>\n";
     public $activateParents = true;
 
@@ -27,29 +27,29 @@ class Menu extends Menus
     protected function renderItem($item)
     {
         if (isset($item['items']))
-            $linkTemplate = '<a href="{url}" class="menu-item">{icon} {label}</a>';
+            $linkTemplate = '<a href="{url}" class="menu-item">{icons} {label}</a>';
         else
             $linkTemplate = $this->linkTemplate;
         if (isset($item['url'])) {
             $template = ArrayHelper::getValue($item, 'template', $linkTemplate);
-            $replace = !empty($item['icon']) ? [
+            $replace = !empty($item['icons']) ? [
                 '{url}' => Url::to($item['url']),
                 '{label}' => '<span>' . $item['label'] . '</span>',
-                '{icon}' => '<i class=' . $item['icon'] . '></i> '
+                '{icons}' => '<i class=' . $item['icons'] . '></i> '
             ] : [
                 '{url}' => Url::to($item['url']),
                 '{label}' => '<span>' . $item['label'] . '</span>',
-                '{icon}' => '',
+                '{icons}' => '',
             ];
             return strtr($template, $replace);
         } else {
             $template = ArrayHelper::getValue($item, 'template', $this->labelTemplate);
-            $replace = !empty($item['icon']) ? [
+            $replace = !empty($item['icons']) ? [
                 '{label}' => '<span>' . $item['label'] . '</span>',
-                '{icon}' => '<i class=' . $item['icon'] . '></i> '
+                '{icons}' => '<i class=' . $item['icons'] . '></i> '
             ] : [
                 '{label}' => '<span>' . $item['label'] . '</span>',
-                '{icon}' => '',
+                '{icons}' => '',
             ];
             return strtr($template, $replace);
         }
@@ -113,7 +113,7 @@ class Menu extends Menus
             }
             $encodeLabel = isset($item['encode']) ? $item['encode'] : $this->encodeLabels;
             $items[$i]['label'] = $encodeLabel ? Html::encode($item['label']) : $item['label'];
-            $items[$i]['icon'] = isset($item['icon']) ? $item['icon'] : '';
+            $items[$i]['icons'] = isset($item['icons']) ? $item['icons'] : '';
             $hasActiveChild = false;
             if (isset($item['items'])) {
                 $items[$i]['items'] = $this->normalizeItems($item['items'], $hasActiveChild);
