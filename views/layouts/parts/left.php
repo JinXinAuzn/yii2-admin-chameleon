@@ -24,8 +24,6 @@ $callback = function ($menu) {
         //other attribute e.g. class...
         $return['options'] = $data;
     }
-    //没配置图标的显示默认图标
-    (!isset($return['visible']) || !$return['visible']) && $return['visible'] = true;
     $items && $return['items'] = $items;
     return $return;
 };
