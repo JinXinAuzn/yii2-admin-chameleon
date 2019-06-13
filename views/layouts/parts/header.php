@@ -11,7 +11,7 @@ use yii\helpers\Html;
                     <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
                 </ul>
                 <ul class="nav navbar-nav nav-item d-none d-md-block" style="margin: 0 auto;color: #fff;"><?=Yii::t('rbac-admin','Backend_name')?></ul>
-                <ul class="nav navbar-nav float-right" id="nav-admin">
+                <ul class="nav navbar-nav float-right">
                     <li class="dropdown dropdown-user nav-item">
                         <?=Html::a(isset(Yii::$app->user->identity->username) ? Yii::$app->user->identity->username : 'admin','#!',['class'=>'dropdown-toggle nav-link dropdown-user-link ','data-toggle'=>'dropdown'])?>
                         <div class="dropdown-menu dropdown-menu-right">
